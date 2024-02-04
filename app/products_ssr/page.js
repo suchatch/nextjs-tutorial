@@ -6,6 +6,16 @@ async function getProducts() {
     return response.json()
 }
 export default async function page() {
+  async function getData() {
+    
+    return new Promise((resolve, reject) => {
+      
+      setTimeout(() => {
+        return resolve('Data Ready!')
+      }, 3000)
+    })
+  }
+  const message = await getData()
   const productsRep = await getProducts();
   return (
     <div>
@@ -17,6 +27,7 @@ export default async function page() {
           </div>
         ))
       }
+      <div className="text-3xl text-gray-400">Products Status : {message}</div>
     </div>
   )
 }
