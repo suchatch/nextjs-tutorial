@@ -1,4 +1,3 @@
-'use client'
 async function getProducts() {
     const response = await fetch('http://localhost:3000/api/products')
     if (!response.ok) {
