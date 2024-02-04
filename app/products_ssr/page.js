@@ -1,5 +1,5 @@
 async function getProducts() {
-    const response = await fetch('http://localhost:3000/api/products')
+    const response = await fetch('http://localhost:3000/api/products', { next: { revalidate: 60 } })
     if (!response.ok) {
       throw new Error('cannot fetch products')
     }
