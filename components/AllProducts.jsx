@@ -32,13 +32,12 @@ export default function AllProducts() {
         setProductsInCart(updatedCart);
     }
     const removeFromCart = (product) => {
-        console.log(`product`,product)
-        // const updatedCart = [...productsInCart];
-        // const index = productsInCart.findIndex(item => product.id === item.id);
-        // if (index !== -1) {
-        //     updatedCart.splice(index, 1);
-        //     setProductsInCart(updatedCart);
-        // } 
+        const updatedCart = [...productsInCart];
+        const index = productsInCart.findIndex(item => product.id === item.id);
+        if (index !== -1) {
+            updatedCart.splice(index, 1);
+            setProductsInCart(updatedCart);
+        } 
     }
 
     return (
