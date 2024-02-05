@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 
 async function getProducts() {
-    const response = await fetch('http://localhost:3000/api/products')
+    const response = await fetch(`${process.env.NEXT_PUBLIC_DB_HOST}/products`)
     if (!response.ok) {
       throw new Error('cannot fetch products')
     }
